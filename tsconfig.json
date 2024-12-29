@@ -3,7 +3,9 @@
     "target": "es5",             // Can be es6 or higher, depending on your needs
     "lib": ["dom", "esnext"],    // Include relevant libraries for TypeScript
     "jsx": "react-jsx",         // Enable JSX transformation for React
-    "moduleResolution": "node",
+    "moduleResolution": "node16",  // or "nodenext"
+    "module": "esnext",             // Use "esnext" if you're working with modern JavaScript/TypeScript features
+    "target": "es6",   
     "strict": true,              // Optional: Enable strict mode for better type checking
     "esModuleInterop": true      // Optional: Enables default imports for commonjs modules
   },
