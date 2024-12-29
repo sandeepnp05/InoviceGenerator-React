@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { Card, CardContent } from "../components/ui/card.js";
 import { Input } from "../components/ui/input.js";
-import { toast } from "sonner"
+import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { login } from '../reduxStore/slices/userSlice.js';
-import {useDispatch} from 'react-redux'
-import Vector3 from '../../src/assets/images/Vector 3.svg'
+import { useDispatch } from 'react-redux';
+import Vector3 from '../../src/assets/images/Vector 3.svg';
 
-import scrol1 from '../../src/assets/images/login/scrol1.png'
-import scrol3 from '../../src/assets/images/login/scrol3.png'
+import scrol1 from '../../src/assets/images/login/scrol1.png';
+import scrol3 from '../../src/assets/images/login/scrol3.png';
 import {
   Carousel,
   CarouselContent,
@@ -18,8 +18,6 @@ import {
 } from "../components/ui/carousel.js";
 import Header from '../components/Header.js';
 import { Button } from '../components/ui/button.js';
-
-
 
 interface LoginFormData {
   email: string;
@@ -36,12 +34,11 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const carouselImages = [scrol1, scrol3];
-
+  // Define carouselImages as an array of strings
+  const carouselImages: string[] = [scrol1, scrol3];
 
   useEffect(() => {
     if (!api) return;
@@ -66,7 +63,6 @@ const Login = () => {
     setLoading(true);
     setError('');
 
-    // Validate email and password (optional)
     if (!formData.email || !formData.password) {
       setError('Please enter both email and password');
       setLoading(false);
@@ -85,22 +81,18 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
-    
         dispatch(login({ user: data.user, token: data.token }));
-        console.log('Login successful', data);
         toast.success('Logged in successfully!', {
           description: 'Welcome back!',
         });
         navigate('/');
       } else {
-       
         setError(data.message || 'Login failed');
         toast.error(data.message || 'Login failed', {
           description: 'Invalid credentials or error occurred.',
         });
       }
     } catch (error) {
-      console.error('Login error:', error);
       setError('An error occurred while logging in');
       toast.error('Network error', {
         description: 'Unable to connect to the server. Please try again later.',
@@ -118,33 +110,33 @@ const Login = () => {
           {/* Background Overlay */}
           <div className="absolute bottom-0 left-0 w-[150px] blur-[90px] h-[150px] bg-[#CCF575] opacity-70 pointer-events-none rounded-full z-0"></div>
           <div className="absolute top-0 right-0 w-[150px] blur-[90px] h-[250px] bg-[#4F59A8] opacity-70 pointer-events-none rounded-full z-0"></div>
+          
           {/* Left side - Carousel */}
           <div className="hidden md:block">
-            <Carousel opts={{ loop: true, }} className="w-full" setApi={setApi}>
+            <Carousel opts={{ loop: true }} className="w-full" setApi={setApi}>
               <CarouselContent className="h-[600px]">
-              {carouselImages.map((item, index) => (
-              <CarouselItem key={index}>
-              <Card className="border-0 bg-transparent">
-              <CardContent className="p-0">
-              <img
-                   src={item}
-              alt={`Slide ${index + 1}`}
-              className="rounded-2xl object-cover w-full h-[600px]"
-                   />
-              </CardContent>
-              </Card>
-              </CarouselItem>
+                {carouselImages.map((item, index) => (
+                  <CarouselItem key={index}>
+                    <Card className="border-0 bg-transparent">
+                      <CardContent className="p-0">
+                        <img
+                          src={item}
+                          alt={`Slide ${index + 1}`}
+                          className="rounded-2xl object-cover w-full h-[600px]"
+                        />
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
                 ))}
-
               </CarouselContent>
             </Carousel>
           </div>
 
           {/* Right side - Login Form */}
-          <div className=" h-full w-full p-8">
+          <div className="h-full w-full p-8">
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-6">
-                <img src="/src/assets/images/logo.svg" alt="" />
+                <img src="/src/assets/images/logo.svg" alt="Logo" />
               </div>
               <h1 className="text-3xl font-bold text-white mb-2">Let the Journey Begin!</h1>
               <p className="text-gray-400">
@@ -200,7 +192,7 @@ const Login = () => {
               <div className="flex items-center justify-between">
                 <Button className="relative inline-flex items-center justify-center overflow-hidden font-medium text-[#CCF575] transition duration-300 ease-out bg-[#424647] shadow-md group px-6 lg:px-8 py-2.5 lg:py-3 w-full sm:w-auto">
                   <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-300 translate-x-full bg-[#141414] group-hover:bg-gradient-to-r group-hover:from-[#141414] group-hover:to-[#535450] group-hover:translate-x-[25%] ease">
-                    <img src={Vector3} />
+                    <img src={Vector3} alt="Vector" />
                   </span>
                   <span className="font-pretendard relative flex items-center justify-center w-full h-full transform group-hover:translate-x-[-25%] transition-all duration-500 ease-in-out">
                     {loading ? 'Logging In...' : 'Login'}
