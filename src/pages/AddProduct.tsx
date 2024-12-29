@@ -27,7 +27,7 @@ const AddProduct = () => {
           return;
         }
 
-        const response = await fetch('http://localhost:5000/products', {
+        const response = await fetch('https://invoicegenerator-backend.onrender.com/products', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -57,7 +57,7 @@ const AddProduct = () => {
       }
 
       try {
-        const response = await fetch('http://localhost:5000/addProduct', {
+        const response = await fetch('https://invoicegenerator-backend.onrender.com/addProduct', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const AddProduct = () => {
 
     setLoading(true); 
     try {
-      const response = await fetch('http://localhost:5000/generate-invoice', {
+      const response = await fetch('https://invoicegenerator-backend.onrender.com/generate-invoice', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
