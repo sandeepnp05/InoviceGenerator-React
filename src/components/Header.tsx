@@ -4,7 +4,7 @@ import { Button } from './ui/button.js';
 import { RootState } from '../reduxStore/store.js';
 import { logout } from '../reduxStore/slices/userSlice.js';
 import { Link } from 'react-router-dom';
-
+import logo from '../../src/assets/images/logo.svg'
 const Header: React.FC = () => {
   const user = useSelector((state: RootState) => state.auth?.token || null);
 
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
         {/* Logo Section */}
         <div className="flex items-center space-x-4">
           <img
-            src='/src/assets/images/logo.svg'
+            src={logo}
             alt="Logo"
             className="h-8"
           />

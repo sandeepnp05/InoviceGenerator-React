@@ -6,6 +6,10 @@ import { toast } from "sonner"
 import { useNavigate } from "react-router-dom";
 import { login } from '../reduxStore/slices/userSlice.js';
 import {useDispatch} from 'react-redux'
+import Vector3 from '../../src/assets/images/Vector 3.svg'
+
+import scrol1 from '../../src/assets/images/login/scrol1.png'
+import scrol3 from '../../src/assets/images/login/scrol3.png'
 import {
   Carousel,
   CarouselContent,
@@ -32,12 +36,13 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const carouselImages = [
-    { image: "/src/assets/images/login/scrol1.png", },
-    { image: "/src/assets/images/login/scrol3.png", },
+    { scrol1, },
+    { scrol3 },
   ];
 
   useEffect(() => {
@@ -196,7 +201,7 @@ const Login = () => {
               <div className="flex items-center justify-between">
                 <Button className="relative inline-flex items-center justify-center overflow-hidden font-medium text-[#CCF575] transition duration-300 ease-out bg-[#424647] shadow-md group px-6 lg:px-8 py-2.5 lg:py-3 w-full sm:w-auto">
                   <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-300 translate-x-full bg-[#141414] group-hover:bg-gradient-to-r group-hover:from-[#141414] group-hover:to-[#535450] group-hover:translate-x-[25%] ease">
-                    <img src="/src/assets/images/Vector 3.svg" alt="" />
+                    <img src={Vector3} />
                   </span>
                   <span className="font-pretendard relative flex items-center justify-center w-full h-full transform group-hover:translate-x-[-25%] transition-all duration-500 ease-in-out">
                     {loading ? 'Logging In...' : 'Login'}

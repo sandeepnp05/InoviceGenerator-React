@@ -5,6 +5,7 @@ import Header from '../components/Header.jsx';
 import { toast } from "sonner"
 import { useNavigate } from "react-router-dom";
 import { useValidation } from '../hooks/useValidation.js';
+import Signup1 from '../../src/assets/images/Signup.png'
 
 const Signup = () => {
   const [userData, setUserData] = useState({
@@ -184,7 +185,7 @@ const Signup = () => {
         <div className="w-full mt-[80px] lg:w-[800px] h-[200px] sm:h-[400px] md:h-[500px] lg:h-[650px] rounded-3xl relative order-first lg:order-last">
           <div className="absolute inset-0">
             <img
-              src="/src/assets/images/Signup.png"
+              src={Signup1}
               alt="Banner"
               className="w-full h-full object-fill"
             />
