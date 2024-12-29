@@ -40,10 +40,8 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const carouselImages: { image: string }[] = [
-    { image: scrol1 },
-    { image: scrol3 },
-  ];
+  const carouselImages = [scrol1, scrol3];
+
 
   useEffect(() => {
     if (!api) return;
@@ -124,19 +122,20 @@ const Login = () => {
           <div className="hidden md:block">
             <Carousel opts={{ loop: true, }} className="w-full" setApi={setApi}>
               <CarouselContent className="h-[600px]">
-                {carouselImages.map((item, index) => (
-                  <CarouselItem key={index}>
-                    <Card className="border-0 bg-transparent">
-                      <CardContent className="p-0">
-                        <img
-                          src={item.image}
-                          alt={`Slide ${index + 1}`}
-                          className="rounded-2xl object-cover w-full h-[600px]"
-                        />
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
+              {carouselImages.map((item, index) => (
+              <CarouselItem key={index}>
+              <Card className="border-0 bg-transparent">
+              <CardContent className="p-0">
+              <img
+                   src={item}
+              alt={`Slide ${index + 1}`}
+              className="rounded-2xl object-cover w-full h-[600px]"
+                   />
+              </CardContent>
+              </Card>
+              </CarouselItem>
                 ))}
+
               </CarouselContent>
             </Carousel>
           </div>
