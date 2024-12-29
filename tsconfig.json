@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",             // Can be es6 or higher, depending on your needs
+              
     "lib": ["dom", "esnext"],    // Include relevant libraries for TypeScript
     "jsx": "react-jsx",         // Enable JSX transformation for React
     "moduleResolution": "node16",  // or "nodenext"
