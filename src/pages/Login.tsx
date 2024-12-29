@@ -40,9 +40,9 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const carouselImages = [
-    { scrol1, },
-    { scrol3 },
+  const carouselImages: { image: string }[] = [
+    { image: scrol1 },
+    { image: scrol3 },
   ];
 
   useEffect(() => {
