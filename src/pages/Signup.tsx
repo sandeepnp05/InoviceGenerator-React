@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
-import Header from '../components/Header';
+import { Input } from "../components/ui/input.js";
+import { Button } from "../components/ui/button.js";
+import Header from '../components/Header.jsx';
 import { toast } from "sonner"
 import { useNavigate } from "react-router-dom";
-import { useValidation } from '../hooks/useValidation';
+import { useValidation } from '../hooks/useValidation.js';
 
 const Signup = () => {
   const [userData, setUserData] = useState({

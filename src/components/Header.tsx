@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button } from './ui/button';
-import { RootState } from '../reduxStore/store';
-import { logout } from '../reduxStore/slices/userSlice';
+import { Button } from './ui/button.js';
+import { RootState } from '../reduxStore/store.js';
+import { logout } from '../reduxStore/slices/userSlice.js';
 import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {

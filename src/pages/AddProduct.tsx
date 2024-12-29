@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
-import Header from '../components/Header';
+import { Input } from "../components/ui/input.js";
+import { Button } from "../components/ui/button.js";
+import Header from '../components/Header.jsx';
 
 interface Product {
   productName: string;

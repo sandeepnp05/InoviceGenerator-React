@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
-import { Card, CardContent } from "../components/ui/card";
-import { Input } from "../components/ui/input";
+import { Card, CardContent } from "../components/ui/card.js";
+import { Input } from "../components/ui/input.js";
 import { toast } from "sonner"
 import { useNavigate } from "react-router-dom";
-import { login } from '../reduxStore/slices/userSlice';
+import { login } from '../reduxStore/slices/userSlice.js';
 import {useDispatch} from 'react-redux'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   type CarouselApi
-} from "../components/ui/carousel";
-import Header from '../components/Header';
-import { Button } from '../components/ui/button';
+} from "../components/ui/carousel.js";
+import Header from '../components/Header.js';
+import { Button } from '../components/ui/button.js';
 
 
 
